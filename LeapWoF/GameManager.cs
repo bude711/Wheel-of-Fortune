@@ -113,7 +113,7 @@ namespace LeapWoF
                 {
                     displayString += TemporaryPuzzle[i];
                 }
-                else if (TemporaryPuzzle[i].Equals(" "))
+                else if (string.IsNullOrWhiteSpace(TemporaryPuzzle[i].ToString()))
                 {
                     displayString += " ";
                 }
