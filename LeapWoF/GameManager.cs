@@ -140,7 +140,20 @@ namespace LeapWoF
         {
             outputProvider.Write("Please enter your solution:");
             var guess = inputProvider.Read();
+            if (guess.ToLower().Equals(TemporaryPuzzle.ToLower()))
+            {
+                outputProvider
+                    .WriteLine("Correct! You win!");
+                System.Threading.Thread.Sleep(5000);
+                GameState = GameState.GameOver;
+            }else
+            {
+                outputProvider.WriteLine("Incorrect!");
+                System.Threading.Thread.Sleep(5000);
+            }
+            
         }
+
         public void GuessLetter()
         {
             outputProvider.Write("Please guess a letter: ");
