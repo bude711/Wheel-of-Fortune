@@ -104,7 +104,25 @@ namespace LeapWoF
         private void DrawPuzzle()
         {
             outputProvider.WriteLine("The puzzle is:");
-            outputProvider.WriteLine(TemporaryPuzzle);
+            outputProvider.WriteLine();
+            string displayString = "";
+
+            for (int i = 0; i < TemporaryPuzzle.Length; i++)
+            {
+                if (charGuessList.Contains(TemporaryPuzzle[i].ToString()))
+                {
+                    displayString += TemporaryPuzzle[i];
+                }
+                else if (TemporaryPuzzle[i].Equals(" "))
+                {
+                    displayString += " ";
+                }
+                else
+                {
+                    displayString += "-";
+                }
+            }
+            outputProvider.WriteLine(displayString);
             outputProvider.WriteLine();
         }
 
