@@ -150,7 +150,7 @@ namespace LeapWoF
                 outputProvider.WriteLine("Please guess only one letter at a time.");
                 System.Threading.Thread.Sleep(5000);
             }
-            else if (!TemporaryPuzzle.Contains(guess))
+            else if (!TemporaryPuzzle.ToLower().Contains(guess.ToLower()))
             {
                 outputProvider.WriteLine("Incorrect. Try again!");
                 System.Threading.Thread.Sleep(5000);
