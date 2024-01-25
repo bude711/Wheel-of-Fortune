@@ -109,11 +109,11 @@ namespace LeapWoF
 
             for (int i = 0; i < TemporaryPuzzle.Length; i++)
             {
-                if (charGuessList.Contains(TemporaryPuzzle[i].ToString()))
+                if (charGuessList.Contains(TemporaryPuzzle[i].ToString().ToLower()))
                 {
                     displayString += TemporaryPuzzle[i];
                 }
-                else if (TemporaryPuzzle[i].Equals(" "))
+                else if (string.IsNullOrWhiteSpace(TemporaryPuzzle[i].ToString()))
                 {
                     displayString += " ";
                 }
@@ -145,7 +145,7 @@ namespace LeapWoF
         {
             outputProvider.Write("Please guess a letter: ");
             var guess = inputProvider.Read();
-            charGuessList.Add(guess);
+            charGuessList.Add(guess.ToLower());
         }
 
         /// <summary>
