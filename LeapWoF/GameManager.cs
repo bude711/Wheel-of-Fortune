@@ -77,6 +77,11 @@ namespace LeapWoF
             GameState = GameState.RoundStarted;
         }
 
+        /// <summary>
+        /// The board is cleared. The puzzle is drawn. The user is prompted for input.
+        /// If the user inputs 1, the Spin function is called.
+        /// If the user inputs 2, the Solve function is called.
+        /// </summary>
         public void PerformSingleTurn()
         {
             outputProvider.Clear();
@@ -99,7 +104,7 @@ namespace LeapWoF
         }
 
         /// <summary>
-        /// Draw the puzzle
+        /// Displays the puzzle with correctly guessed letters shown and unguessed letters shown with dashes.
         /// </summary>
         private void DrawPuzzle()
         {
@@ -136,6 +141,11 @@ namespace LeapWoF
             GuessLetter();
         }
 
+        /// <summary>
+        /// Receives user input for a solution to the puzzle and checks if it is correct.
+        /// If the solution is correct, the user wins the game.
+        /// If the solution is incorrect, the game continues.
+        /// </summary>
         public void Solve()
         {
             outputProvider.Write("Please enter your solution:");
@@ -154,6 +164,9 @@ namespace LeapWoF
             
         }
 
+        /// <summary>
+        /// Asks the user for a letter and adds it to the list of guessed letters.
+        /// </summary>
         public void GuessLetter()
         {
             outputProvider.Write("Please guess a letter: ");
